@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int Damage;
+    public int DamageToCity;
 
     public int HP;
+
+    public int HitDamage;
 
     public int SpawnWeight = 1;
 

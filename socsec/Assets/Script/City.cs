@@ -19,7 +19,7 @@ public class City : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            HP -= collision.gameObject.GetComponent<Enemy>().Damage;
+            HP -= collision.gameObject.GetComponent<Enemy>().DamageToCity;
         }
     }
 }

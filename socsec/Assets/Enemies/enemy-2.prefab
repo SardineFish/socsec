@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1673913353541708}
+  m_RootGameObject: {fileID: 1517720827822690}
   m_IsPrefabParent: 1
---- !u!1 &1673913353541708
+--- !u!1 &1517720827822690
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4134816465513008}
-  - component: {fileID: 212516849099075356}
-  - component: {fileID: 58977710876319530}
-  - component: {fileID: 114852312225738946}
-  - component: {fileID: 50250119023934940}
-  - component: {fileID: 114338389821006086}
+  - component: {fileID: 4498959095086102}
+  - component: {fileID: 212636880409740808}
+  - component: {fileID: 114475285250264020}
+  - component: {fileID: 58208948087130376}
+  - component: {fileID: 50780176142636398}
+  - component: {fileID: 114354836193249320}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: enemy-2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4134816465513008
+--- !u!4 &4498959095086102
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673913353541708}
+  m_GameObject: {fileID: 1517720827822690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.63, y: -0.17, z: 10}
+  m_LocalPosition: {x: 4.86, y: 3.6, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50250119023934940
+--- !u!50 &50780176142636398
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673913353541708}
+  m_GameObject: {fileID: 1517720827822690}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -64,12 +64,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58977710876319530
+--- !u!58 &58208948087130376
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673913353541708}
+  m_GameObject: {fileID: 1517720827822690}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -79,12 +79,12 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.43
---- !u!114 &114338389821006086
+--- !u!114 &114354836193249320
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673913353541708}
+  m_GameObject: {fileID: 1517720827822690}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b63a850047210439839675bf0a0b88, type: 3}
@@ -92,29 +92,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ParticleEffect: {fileID: 1389279115752242, guid: 3f76d64c74624a34988d59a4d1b48895,
     type: 2}
---- !u!114 &114852312225738946
+--- !u!114 &114475285250264020
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673913353541708}
+  m_GameObject: {fileID: 1517720827822690}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0572e83a422425c449b555d862a98d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DamageToCity: 1
-  HP: 5
+  HP: 10
   HitDamage: 5
-  SpawnWeight: 10
-  Speed: 1
+  SpawnWeight: 5
+  Speed: 0.5
   Target: {fileID: 0}
---- !u!212 &212516849099075356
+--- !u!212 &212636880409740808
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673913353541708}
+  m_GameObject: {fileID: 1517720827822690}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 03f2674b24db1c14dbde8379698171ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a896f0dd417549d43a95ebffca977447, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
