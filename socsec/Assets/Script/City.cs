@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class City : MonoBehaviour {
-
+public class City : MonoBehaviour
+{
+    public int HP;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +14,12 @@ public class City : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            HP -= collision.gameObject.GetComponent<Enemy>().Damage;
+        }
+    }
 }
