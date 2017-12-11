@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathEffect : MonoBehaviour {
-    public GameObject ParticleEffect;
+    internal GameObject ParticleEffect;
 
 	// Use this for initialization
 	void Start () {

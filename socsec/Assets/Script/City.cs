@@ -5,6 +5,7 @@ using UnityEngine;
 public class City : MonoBehaviour
 {
     public int HP;
+
 	// Use this for initialization
 	void Start () {
 		

@@ -15,10 +15,16 @@ public class Enemy : MonoBehaviour
 
     public float Speed;
 
+    public GameObject DeathEffect;
+    public GameObject AttackEffect;
+
     public GameObject Target;
+
+    private DeathEffect deathEffect;
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+	    deathEffect = GetComponent<DeathEffect>();
 	}
 	
 	// Update is called once per frame
@@ -35,15 +41,21 @@ public class Enemy : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GetComponent<DeathEffect>().enabled = true;
-        GameObject.Destroy(gameObject);
+        HP -= HitDamage;
+        if (HP <= 0)
+        {
+            deathEffect.ParticleEffect = DeathEffect;
+            deathEffect.enabled = true;
+            GameObject.Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "City")
         {
-            GetComponent<DeathEffect>().enabled = true;
+            deathEffect.ParticleEffect = AttackEffect;
+            deathEffect.enabled = true;
             GameObject.Destroy(gameObject);
         }
     }
