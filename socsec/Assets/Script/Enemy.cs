@@ -37,6 +37,12 @@ public class Enemy : MonoBehaviour
 
 	    transform.Translate(Vector3.Scale(Target.transform.position - transform.position,new Vector3(1,1,0)).normalized * Speed*Time.deltaTime);
 
+        RaycastHit hit;
+	    var ray = new Ray(new Vector3(transform.position.x, transform.position.y, -50), new Vector3(0, 0, 1));
+	    if (Physics.Raycast(ray, out hit, 100, 1 << 8))
+	    {
+	        transform.position = new Vector3(transform.position.x, transform.position.y, hit.point.z);
+	    }
 	}
 
     private void OnMouseDown()

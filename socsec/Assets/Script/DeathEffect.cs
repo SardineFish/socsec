@@ -12,7 +12,7 @@ public class DeathEffect : MonoBehaviour {
 
     private void OnEnable()
     {
-        Ray ray = new Ray(transform.position, new Vector3(0, 0, 1));
+        Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, -30), new Vector3(0, 0, 1));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100, 1 << 8))
         {
