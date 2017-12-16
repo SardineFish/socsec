@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game : MonoBehaviour
+public class GameSystem : MonoBehaviour
 {
+    public static GameSystem Current;
     public GameObject[] Enemies;
     public float SpawnSpeed = 1;
     public Camera MainCamera;
@@ -14,6 +15,7 @@ public class Game : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+	    Current = this;
 	    MainCamera = FindObjectOfType<Camera>() as Camera;
 	}
 	
