@@ -106,7 +106,8 @@ MonoBehaviour:
   HitDamage: 5
   SpawnWeight: 2
   MaxSpeed: 0.4
-  Acceleration: 1
+  Speed: 0
+  Acceleration: 0.3
   MoveDirection: {x: 0, y: 0, z: 0}
   DeathEffect: {fileID: 1389279115752242, guid: 3f76d64c74624a34988d59a4d1b48895,
     type: 2}
