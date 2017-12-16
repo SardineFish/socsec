@@ -105,7 +105,9 @@ MonoBehaviour:
   HP: 10
   HitDamage: 5
   SpawnWeight: 5
-  Speed: 0.5
+  MaxSpeed: 0.6
+  Acceleration: 1
+  MoveDirection: {x: 0, y: 0, z: 0}
   DeathEffect: {fileID: 1389279115752242, guid: 3f76d64c74624a34988d59a4d1b48895,
     type: 2}
   AttackEffect: {fileID: 1389279115752242, guid: c883c2f150d65c647a52654e8c6658f1,

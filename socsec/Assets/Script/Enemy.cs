@@ -13,7 +13,13 @@ public class Enemy : MonoBehaviour
 
     public int SpawnWeight = 1;
 
-    public float Speed;
+    public float MaxSpeed = 1;
+
+    public float Speed = 0;
+
+    public float Acceleration = 1;
+
+    public Vector3 MoveDirection;
 
     public GameObject DeathEffect;
     public GameObject AttackEffect;
@@ -30,12 +36,18 @@ public class Enemy : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+	    Speed += Acceleration * Time.deltaTime;
+	    if (Speed > MaxSpeed)
+	        Speed = MaxSpeed;
 	    var targetList = GameObject.FindGameObjectsWithTag("City");
 	    Target = targetList.OrderBy(target => Vector2.Distance(target.transform.position, transform.position)).FirstOrDefault();
         if (!Target)
             return;
 
-	    transform.Translate(Vector3.Scale(Target.transform.position - transform.position,new Vector3(1,1,0)).normalized * Speed*Time.deltaTime);
+
+	    transform.Translate(
+	        Vector3.Scale(Target.transform.position - transform.position, new Vector3(1, 1, 0)).normalized * Speed *
+	        Time.deltaTime);
 
         RaycastHit hit;
 	    var ray = new Ray(new Vector3(transform.position.x, transform.position.y, -50), new Vector3(0, 0, 1));
@@ -43,17 +55,23 @@ public class Enemy : MonoBehaviour
 	    {
 	        transform.position = new Vector3(transform.position.x, transform.position.y, hit.point.z);
 	    }
-	}
+	    if (HP <= 0)
+	    {
+	        deathEffect.ParticleEffect = DeathEffect;
+	        deathEffect.enabled = true;
+	        GameObject.Destroy(gameObject);
+	    }
+    }
 
     private void OnMouseDown()
     {
-        HP -= HitDamage;
+        /*HP -= HitDamage;
         if (HP <= 0)
         {
             deathEffect.ParticleEffect = DeathEffect;
             deathEffect.enabled = true;
             GameObject.Destroy(gameObject);
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,5 +82,10 @@ public class Enemy : MonoBehaviour
             deathEffect.enabled = true;
             GameObject.Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }
