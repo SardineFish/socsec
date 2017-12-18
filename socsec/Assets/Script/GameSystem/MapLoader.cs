@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelLoader : MonoBehaviour {
-    public string[] AvailableScenes;
+public class MapLoader : MonoBehaviour {
+    public List<string> AvailableScenes;
     
 	// Use this for initialization
 	void Start () {
