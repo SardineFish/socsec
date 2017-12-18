@@ -7,6 +7,7 @@ TagManager:
   - City
   - Enemy
   - Weapon
+  - Waypoint
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Waypoint
   - 
   - 
   - 
