@@ -5,6 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class MapLoader : MonoBehaviour {
     public List<string> AvailableScenes;
+
+    Scene mapLoaded;
+    public Scene MapLoaded
+    {
+        get { return mapLoaded; }
+        set
+        {
+            if (Application.isEditor)
+                mapLoaded = value;
+            else
+            {
+                SceneManager.UnloadSceneAsync(mapLoaded);
+                SceneManager.LoadSceneAsync(value.path);
+            }
+
+        }
+    }
     
 	// Use this for initialization
 	void Start () {
@@ -15,8 +32,10 @@ public class MapLoader : MonoBehaviour {
 		
 	}
 
-    public void LoadScene(string path)
+    public void ChangeMap(string path)
     {
-
+        SceneManager.UnloadSceneAsync(MapLoaded);
+        SceneManager.LoadScene(path);
+        mapLoaded = SceneManager.GetSceneByPath(path);
     }
 }

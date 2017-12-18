@@ -21,7 +21,21 @@ namespace Assets.Editor
             var mapLoader = target as MapLoader;
             /*var paths = AssetBundle.LoadFromFile("Assets").GetAllScenePaths();
             */
-            scene = EditorGUILayout.ObjectField("Scene", scene, typeof(SceneAsset), true) as SceneAsset;
+            var mapLoadedPath = mapLoader.MapLoaded != null ? mapLoader.MapLoaded.path : null;
+            SceneAsset sceneLoaded;
+            if (mapLoadedPath == null || mapLoadedPath == "")
+            {
+                sceneLoaded = null;
+            }
+            else
+                sceneLoaded = AssetDatabase.LoadAssetAtPath<SceneAsset>(mapLoadedPath);
+            sceneLoaded = EditorGUILayout.ObjectField("Map Loaded:", sceneLoaded, typeof(SceneAsset), true) as SceneAsset;
+            if(sceneLoaded!=null && mapLoadedPath != AssetDatabase.GetAssetPath(sceneLoaded))
+            {
+                if (mapLoader.MapLoaded.path != null)
+                    EditorSceneManager.CloseScene(mapLoader.MapLoaded, true);
+                mapLoader.MapLoaded = EditorSceneManager.OpenScene(AssetDatabase.GetAssetPath(sceneLoaded), OpenSceneMode.Additive);
+            }
             showSceneList = EditorGUILayout.Foldout(showSceneList, "Available Scenes");
             if (showSceneList)
             {
