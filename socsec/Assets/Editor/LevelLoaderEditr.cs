@@ -31,6 +31,20 @@ namespace Assets.Editor
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.LabelField("Count:", GUILayout.Width(20));
 
+                /*VerticalBlock(
+                    HorizontalBlock(
+                        Text("Count:"),
+                        Text(list.Count),
+                        Button("+", ButtonAddClick),
+                        Button("-", ButtonRemoveClick),
+                        ),
+                    VerticalBlock(
+                        ObjectEditor("Item:", List[0]),
+                        ObjectEditor("Item:", List[1]),
+                        ObjectEditor("Item:", List[2]),
+
+                        )
+                    );*/
             }
         }
     }
