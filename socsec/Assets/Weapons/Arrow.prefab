@@ -112,9 +112,9 @@ MonoBehaviour:
   Damage: 5
   DestroyOnHit: 1
   Target: {x: 10, y: 10}
-  Speed: 10
+  Speed: 12
   ParticleSpeed: 5
-  DestinationRange: 0.1
+  DestinationRange: 0.2
   HitBack: 10
 --- !u!198 &198397849647463024
 ParticleSystem:
