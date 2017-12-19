@@ -43,7 +43,7 @@ public class Arrow : Weapon {
         if (collision.gameObject.tag == "Enemy")
         {
             collision.GetComponent<Enemy>().HP -= Damage;
-            collision.GetComponent<Enemy>().Speed = 0;
+            collision.GetComponent<Enemy>().ActualSpeed = 0;
              collision.GetComponent<Rigidbody2D>().AddForce(transform.forward*HitBack, ForceMode2D.Impulse);
         }
     }
