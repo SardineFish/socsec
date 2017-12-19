@@ -23,7 +23,7 @@ public class GameSystem : MonoBehaviour
 	void Update ()
 	{
 	    time = Time.time;
-	    if (Random.value< SpawnSpeed * Time.deltaTime)
+	    /*if (Random.value< SpawnSpeed * Time.deltaTime)
 	    {
 	        count++;
 
@@ -43,6 +43,6 @@ public class GameSystem : MonoBehaviour
 	            }
 	            totalWeight -= enemy.GetComponent<Enemy>().SpawnWeight;
 	        }
-        }
+        }*/
 	}
 }

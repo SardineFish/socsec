@@ -28,8 +28,23 @@ public class EnemySpawner: MonoBehaviour
                 nextSpawnTime += SpawnDuration + UnityEngine.Random.Range(-RandomRange, RandomRange);
             else
                 nextSpawnTime += SpawnDuration;
-            
 
+            int totalWeight = 0;
+            foreach (var weight in SpawnWeight)
+            {
+                totalWeight += weight;
+            }
+            for(var i = 0; i < SpawnableEnemies.Length; i++)
+            {
+                if (UnityEngine.Random.value <= (float)SpawnWeight[i] / (float)totalWeight)
+                {
+                    var pos = SpawnPoints[UnityEngine.Random.Range(0, SpawnPoints.Length)].transform.position;
+                    pos = (pos.ToVector2() + (UnityEngine.Random.insideUnitCircle * SpawnRadius)).ToVector3();
+                    Instantiate(SpawnableEnemies[i], pos, Quaternion.identity);
+                    break;
+                }
+                totalWeight -= SpawnWeight[i];
+            }
         }
     }
 
