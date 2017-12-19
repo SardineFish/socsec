@@ -394,7 +394,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 700374288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 574.5, y: 209, z: 0}
+  m_LocalPosition: {x: 574.5, y: 208.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1337168030}
@@ -626,11 +626,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageToCity: 0
-  HP: 1000
+  HP: 10
   HitDamage: 0
   SpawnWeight: 1
-  MaxSpeed: 0.2
-  Speed: 0
+  SpeedMultiple: 1
+  ActualSpeed: 0
+  UnitSpeed: 0
   Acceleration: 1
   MoveDirection: {x: 0, y: 0, z: 0}
   DeathEffect: {fileID: 1389279115752242, guid: 3f76d64c74624a34988d59a4d1b48895,
@@ -684,6 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b63a850047210439839675bf0a0b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0.18, z: 0}
 --- !u!1 &1005809354
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +744,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1076935080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 574.5, y: 209, z: 0}
+  m_LocalPosition: {x: 574.5, y: 208.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1337168030}
