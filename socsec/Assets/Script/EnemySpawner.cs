@@ -11,8 +11,8 @@ public class EnemySpawner: MonoBehaviour
     public float SpawnDuration = 1;
     public bool RandomSpawn = false;
     public float RandomRange = 0;
-    public GameObject[] SpawnableEnemies;
-    public int[] SpawnWeight;
+    public GameObject[] SpawnableEnemies = new GameObject[0];
+    public int[] SpawnWeight = new int[0];
 
     float nextSpawnTime = 0;
     private void Start()
