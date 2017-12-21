@@ -219,6 +219,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1267492889189818, guid: b70a735bb306e824883b230203bae5ae,
         type: 2}
+    - target: {fileID: 114079831628403898, guid: 248aa7f2d758e034cb5167eb2b247d60,
+        type: 2}
+      propertyPath: MaxFlyDistance
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 248aa7f2d758e034cb5167eb2b247d60, type: 2}
   m_IsPrefabParent: 0
@@ -641,11 +646,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4663092249510338, guid: 6f019082c3ae9eb46b8a9b85ff941cba, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 17.77
+      value: 17.48
       objectReference: {fileID: 0}
     - target: {fileID: 4663092249510338, guid: 6f019082c3ae9eb46b8a9b85ff941cba, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.18
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: 4663092249510338, guid: 6f019082c3ae9eb46b8a9b85ff941cba, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1382,6 +1387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Arrow: {fileID: 0}
   Source: {fileID: 0}
+  MaxFlyDistance: 0
 --- !u!114 &1367801699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,11 +1408,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4663092249510338, guid: 6f019082c3ae9eb46b8a9b85ff941cba, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -17.29
+      value: -17.77
       objectReference: {fileID: 0}
     - target: {fileID: 4663092249510338, guid: 6f019082c3ae9eb46b8a9b85ff941cba, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: -5.52
       objectReference: {fileID: 0}
     - target: {fileID: 4663092249510338, guid: 6f019082c3ae9eb46b8a9b85ff941cba, type: 2}
       propertyPath: m_LocalPosition.z

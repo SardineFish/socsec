@@ -8,6 +8,7 @@ public class ArrowController: MonoBehaviour
 {
     public GameObject Arrow;
     public GameObject Source;
+    public float MaxFlyDistance;
     private void Start()
     {
         
@@ -23,8 +24,9 @@ public class ArrowController: MonoBehaviour
             var src = new Vector3(0, 0, 0);
             if (Source)
                 src = Source.transform.position;
+            var dir = targetPos.ToVector2() - src.ToVector2();
             var arrow = Instantiate(Arrow, src, Quaternion.identity) as GameObject;
-            arrow.GetComponent<Arrow>().Target = targetPos;
+            arrow.GetComponent<Arrow>().Target = dir.normalized.ToVector3() * MaxFlyDistance + src;
         }
     }
 
