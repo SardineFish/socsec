@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class MapLoader : MonoBehaviour {
     public List<string> AvailableScenes;
@@ -23,6 +24,17 @@ public class MapLoader : MonoBehaviour {
         }
     }
     
+    [SerializeField]
+    string mapPath;
+    public string MapPath
+    {
+        get { return mapPath; }
+        set
+        {
+            mapPath = value;
+            
+        }
+    }
 	// Use this for initialization
 	void Start () {
 	}
